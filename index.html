@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Task Tracker</h1>
+      <p class="tagline">Organize your day, one task at a time</p>
+    </header>
+
+    <section class="add-task">
+      <form id="task-form">
+        <input 
+          type="text" 
+          id="task-input" 
+          placeholder="What needs to be done?" 
+          autocomplete="off"
+          maxlength="200"
+        >
+        <button type="submit" id="add-btn" aria-label="Add task" onclick="addTask(event)">Add</button>
+      </form>
+    </section>
+
+    <section class="task-list-section">
+      <h2 class="tasks-heading">Your Tasks</h2>
+      <div class="task-stats">
+        <span id="task-count">0 tasks | 0 completed</span>
+      </div>
+      <ul id="task-list" aria-label="Task list"></ul>
+      <div id="empty-state" role="button" tabindex="0" onclick="document.getElementById('task-input').focus()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('task-input').focus()}">
+        <div class="empty-icon" aria-hidden="true">+</div>
+        <p>No tasks yet. Add your first task above.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
